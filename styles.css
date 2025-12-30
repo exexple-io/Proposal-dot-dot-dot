@@ -163,6 +163,28 @@ body {
     animation-delay: 0.3s;
 }
 
+.ribbon-corner {
+    position: absolute;
+    width: 80px;
+    height: 8px;
+    background: linear-gradient(90deg, var(--accent-pink), var(--soft-pink));
+    top: 15px;
+    left: 15px;
+    border-radius: 4px;
+    transform: rotateZ(-25deg);
+    box-shadow: 0 3px 10px rgba(255, 158, 197, 0.4);
+    animation: ribbonWave 2.5s ease-in-out infinite;
+}
+
+@keyframes ribbonWave {
+    0%, 100% {
+        transform: rotateZ(-25deg) translateX(0);
+    }
+    50% {
+        transform: rotateZ(-25deg) translateX(5px);
+    }
+}
+
 @keyframes swing {
     0%, 100% {
         transform: translateX(-50%) rotateZ(0deg);
@@ -236,7 +258,7 @@ body {
     background: var(--primary-cream);
     border-radius: 8px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
+    overflow: visible;
     border: 3px solid var(--accent-pink);
 }
 
@@ -250,6 +272,7 @@ body {
     clip-path: polygon(0 0, 100% 0, 50% 100%);
     transform-origin: top center;
     animation: flapOpen 0.8s ease-out 2s forwards;
+    z-index: 10;
 }
 
 @keyframes flapOpen {
@@ -268,6 +291,7 @@ body {
     justify-content: center;
     align-items: center;
     background: var(--secondary-cream);
+    border-radius: 8px;
 }
 
 .open-btn {
@@ -305,6 +329,61 @@ body {
     gap: 30px;
 }
 
+.hearts-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    pointer-events: none;
+    z-index: 50;
+}
+
+.heart-float {
+    position: absolute;
+    font-size: 3rem;
+    animation: heartRise 3s ease-out forwards;
+}
+
+.heart-float:nth-child(1) {
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.heart-float:nth-child(2) {
+    left: 35%;
+    animation-delay: 0.2s;
+}
+
+.heart-float:nth-child(3) {
+    left: 50%;
+    animation-delay: 0.4s;
+}
+
+.heart-float:nth-child(4) {
+    left: 65%;
+    animation-delay: 0.6s;
+}
+
+.heart-float:nth-child(5) {
+    left: 80%;
+    animation-delay: 0.8s;
+}
+
+@keyframes heartRise {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh) scale(0.3) rotateZ(360deg);
+    }
+}
+
 .letter-page {
     width: 100%;
     height: 65vh;
@@ -315,17 +394,19 @@ body {
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
     border: 2px solid var(--baby-pink);
     overflow-y: auto;
-    animation: slideIn 0.6s ease-out;
+    animation: slideInFromEnvelope 0.8s ease-out 3s backwards, slideInFromEnvelope 0.8s ease-out 3s forwards;
+    opacity: 0;
+    animation: slideInFromEnvelope 0.8s ease-out 3s forwards;
 }
 
-@keyframes slideIn {
+@keyframes slideInFromEnvelope {
     from {
         opacity: 0;
-        transform: translateX(50px);
+        transform: translateY(100px) scale(0.95);
     }
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0) scale(1);
     }
 }
 
@@ -353,7 +434,8 @@ body {
     border-radius: 15px;
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
     border: 2px solid var(--baby-pink);
-    animation: slideIn 0.6s ease-out;
+    animation: slideInFromEnvelope 0.8s ease-out 3s forwards;
+    opacity: 0;
 }
 
 .photo-item {
@@ -398,6 +480,8 @@ body {
     gap: 20px;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    animation: fadeIn 0.6s ease-in-out 3s forwards;
 }
 
 .page-counter {
@@ -450,6 +534,8 @@ body {
     padding: 14px 35px;
     font-size: 1.1rem;
     box-shadow: 0 8px 25px rgba(255, 217, 0, 0.3);
+    opacity: 0;
+    animation: fadeIn 0.6s ease-in-out 3s forwards;
 }
 
 .btn-finish:hover {
@@ -654,4 +740,4 @@ body {
     .final-text {
         font-size: 1.8rem;
     }
-}
+    }
