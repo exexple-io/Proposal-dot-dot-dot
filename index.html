@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <!-- GREETING SCREEN -->
+        <section class="screen screen-greeting" id="greetingScreen">
+            <div class="greeting-content">
+                <h1 class="greeting-text">Heyyyy, how are you? 👋</h1>
+                <div class="greeting-follow-up" id="followUpText">
+                    <p>i have something for you, wanna see? 💝</p>
+                    <button class="btn btn-primary" onclick="showEnvelope()">Yes</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENVELOPE SCREEN -->
+        <section class="screen screen-envelope" id="envelopeScreen" style="display: none;">
+            <div class="envelope-container">
+                <!-- Decorative ribbons -->
+                <div class="ribbon ribbon-1"></div>
+                <div class="ribbon ribbon-2"></div>
+                <div class="bow bow-1"></div>
+                <div class="bow bow-2"></div>
+                
+                <!-- Sparkles -->
+                <div class="sparkle sparkle-1"></div>
+                <div class="sparkle sparkle-2"></div>
+                <div class="sparkle sparkle-3"></div>
+                <div class="sparkle sparkle-4"></div>
+                <div class="sparkle sparkle-5"></div>
+
+                <!-- Ribbon corner -->
+                <div class="ribbon-corner"></div>
+
+                <!-- Envelope -->
+                <div class="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <button class="open-btn" onclick="openEnvelope()">Open Letter 💌</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LETTER PAGES SCREEN -->
+        <section class="screen screen-letter" id="letterScreen" style="display: none;">
+            <div class="letter-container">
+                <div class="letter-wrapper">
+                    <!-- Letter Page 1 -->
+                    <div class="letter-page letter-page-1 active" id="letterPage1">
+                        <div class="letter-paper">
+                            <div class="letter-edge letter-edge-left"></div>
+                            <div class="letter-edge letter-edge-right"></div>
+                            <div class="letter-content">
+                                <p>ওওওহহহমমম🤧<br>
+                                <strong>*Heyy! Mr. Patar*❤️😽</strong><br><br>
+                                শুনা চোন🙂.......<br><br>
+                                কথা এটা ক'ম ক'ম বুলি ইমান দিনে কোৱাই নাছিলোঁ সদায় massage য়ে কৰি থাকিলোঁ ধেমালি ধেমালিকেই কিন্তু কোৱা হে হোৱা নাই, মই যিটো কথা ক'ম বুলি কৈছোঁ সেইটো মই বহুবাৰ indirectly তোমাক ক'বলৈ চেষ্টা কৰিছিলো কিন্তু তোমাৰ reply নাঁহেই ignore মাৰি দিয়া 🥺 সদায় তোমাৰ massage ৰ reply ৰ বাবে ৰখি থাকো,online আহিয়ে থাকো তোমাক চাবলৈ কিন্তু তোমাৰ reply নাহেই online থাকিও, বেলেগ কোনোবা ফালে হে যায় চাগে reply বোৰ😏।<br><br>
+                                পিছত ভাৱি লওঁ যে বহুত busy চাগে সেইকাৰণে reply দিয়া নাই কিন্তু নাজানো সঁচাই নে মিছাই busy🙂‍↔️।<br><br>
+                                বাৰু: <strong>*হ'ব এইবোৰ এতিয়া main কথাটোলৈ আহোঁ শুনা*</strong> ......😺----👇<br><br>
+                                অনুভৱ কৰিবা please মোৰ কথা খিনি🥺❤️‍🩹🙏।<br><br>
+                                বেয়া নাপাবা মই মোৰ নিজৰ মনৰ কথাবোৰ আজি নোকোৱাকৈ থাকিব নোৱাৰিলো সেইকাৰণে কৈ দিলোঁ, মই তোমাক মোৰ হৃদয়ত স্থান দি পেলালোঁ অ 🥹 দিওঁ বুলি দিয়া নাই কিন্তু নিজে নিজে লৈ ল'লা তুমিয়েই🫢। তুমি নো কি ইমান বিশেষ আজিলৈ গমেই নাপালোঁ কিন্তু বিশেষ তুমি মোৰ বাবে💌🫶।<br><br>
+                                তোমাৰ মোক ভাল লাগে নে নালাগে নাজানো, নালাগিবও পাৰে it's not important but</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Letter Page 2 -->
+                    <div class="letter-page letter-page-2" id="letterPage2" style="display: none;">
+                        <div class="letter-paper">
+                            <div class="letter-edge letter-edge-left"></div>
+                            <div class="letter-edge letter-edge-right"></div>
+                            <div class="letter-content">
+                                <p>মই তোমাক বহুত বহুত ভাল পাওঁ, দিনে দিনে তোমালৈ সেই ভাল পোৱা বেছি হৈ গৈ আছে কথা নাপাতো যদিও*🥺❤️।<br><br>
+                                👇<br><br>
+                                তোমাৰো যদি কিবা আছে ক'বলৈ মোক নিচিন্তভাৱে ক'ব পাৰা ভাল ,বেয়া যি আছে ক'ব পাৰা তুমি কিবা বেয়া পাইছা ,কিবা অসুবিধা পাইছা মোৰ ফালৰ পৰা বা বেলেগ ফালৰ পৰাও সকলোবোৰ ক'বা মোক মুখ আৰু মন খুলি, মই বেয়া নাপাওঁ তোমাক কাৰণ ভাল পোৱা মানুহজনক কেতিয়াও বেয়া পাৱই নোৱাৰি😌। আৰু যদি তোমাৰ মনৰ পছন্দৰ কোনোবা আছে সেয়াও মোক মন খুলি ক'ব পাৰা মই বেয়া নাপাওঁ😇 তোমাৰ লগত আছোঁ সদায় 👐🏻।<br><br>
+                                ❤️ অনুভৱ কৰিবা🥹👇<br><br>
+                                <strong>*অকণমান সৰুকৈ হ'লেও তোমাৰ পৰা আশা এটা কৰি তোমালৈ এটা প্ৰশ্ন মোক তোমাৰ জীৱনৰ অধিকাৰী হ'বলৈ দিবা নে??*</strong>🥲🛐<br><br>
+                                <strong>*কৰিব পাৰিবা নে মোক তোমাৰ আধা অংশ?*</strong>🥺🛐🙏❤️‍🩹<br><br>
+                                যদি তুমি মোক ইমান খিনি অধিকাৰ দিয়া! মৰম আৰু সন্মানৰ অভাৱ তোমাক মই জীয়াই থকালৈকে কেতিয়াও হ'বলৈ নিদিওঁ🥺 সদায় মোৰ কৰি ৰাখিম তোমাক💎, মোৰ মনৰ ৰাজকুমাৰ জন কৰি ৰাখিম তোমাক🥺💌🧿। কোৱা চোন পাৰিবা নে কৰিবলৈ 🥲?<br><br>
+                                তুমি গোটেই বোৰ ধুনীয়াকৈ হয়টো পঢ়িছা অনুভৱ কৰিছা কিবা এটা হ'লেও উত্তৰ দিবা দেই। মই তুমি একো উত্তৰ নিদিয়ালৈকে এনেদৰেই একো নোকোৱাকে থাকিম🙂</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Letter Page 3 -->
+                    <div class="letter-page letter-page-3" id="letterPage3" style="display: none;">
+                        <div class="letter-paper">
+                            <div class="letter-edge letter-edge-left"></div>
+                            <div class="letter-edge letter-edge-right"></div>
+                            <div class="letter-content">
+                                <p>মানৱতাৰ খাটিৰত কিবা এটা হ'লেও ক'বা please মই ৰখি থাকিম কিন্তু দেই বেং🥺🙏<br><br>
+                                And lastly I am just exposing my feelings for you I hope you understand what I am saying💝<br><br>
+                                <strong>I love you so much ❣️</strong><br><br>
+                                <strong>Happy new year🌹✨</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Letter Page 4 - Photos -->
+                    <div class="letter-page letter-page-4" id="letterPage4" style="display: none;">
+                        <div class="letter-paper">
+                            <div class="letter-edge letter-edge-left"></div>
+                            <div class="letter-edge letter-edge-right"></div>
+                            <div class="photos-collage">
+                                <img src="image1.jpg" alt="Memory 1" class="photo-item photo-1">
+                                <img src="image2.jpg" alt="Memory 2" class="photo-item photo-2">
+                                <img src="image3.jpg" alt="Memory 3" class="photo-item photo-3">
+                                <img src="image4.jpg" alt="Memory 4" class="photo-item photo-4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="letter-nav">
+                    <button class="btn btn-nav" id="prevBtn" onclick="prevPage()" style="display: none;">← Previous</button>
+                    <span class="page-counter"><span id="currentPage">1</span> / 4</span>
+                    <button class="btn btn-nav" id="nextBtn" onclick="nextPage()">Next →</button>
+                </div>
+
+                <button class="btn btn-finish" id="finishBtn" onclick="finishLetter()" style="display: none;">Finish 🎁</button>
+            </div>
+        </section>
+
+        <!-- FINAL QUESTION SCREEN -->
+        <section class="screen screen-question" id="questionScreen" style="display: none;">
+            <div class="question-container">
+                <h2>will you say yes to me? 💝</h2>
+                <div class="question-buttons">
+                    <button class="btn btn-yes" onclick="answerYes()">Yes 💗</button>
+                    <button class="btn btn-no" id="noBtn" onclick="answerNo()">No 💔</button>
+                </div>
+                <p class="hint-text" id="hintText"></p>
+            </div>
+        </section>
+
+        <!-- FINAL YES SCREEN -->
+        <section class="screen screen-final" id="finalScreen" style="display: none;">
+            <div class="final-content">
+                <h1 class="final-text">yayyyyy i knew you'd say yes 🥹</h1>
+                <div class="confetti"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
